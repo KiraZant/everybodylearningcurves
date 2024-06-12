@@ -1,2 +1,2 @@
 # everybodylearningcurves
-Code used to train the ML models for the paper "Predictive Power, Variance and Generalizability – A Machine Learning Case Study on Minimal Necessary Data Sets Sizes in Mental Health Intervention Predictions" by Zantvoort et al. 
+Code used to train the ML models for the paper "Predictive Power, Variance and Generalizability – A Machine Learning Case Study on Minimal Necessary Data Sets Sizes in Mental Health Intervention Predictions" by Zantvoort et al. For privacy reasons, the Jupyter Notebooks including the pre-processing and feature engineering steps are not included. Please refer to Appendix 4 for a detailed description on the steps. 
