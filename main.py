@@ -11,8 +11,8 @@ if __name__ == '__main__':
     PATH = './'
     logger = initiate_log(PATH)
 
-    # Step 1: Check Data Version - Data cannot be publicly shared
-    data_version = ''
+    # Step 1: Data cannot be publicly shared, therefore, this is synthetic data with no predictive power
+    data_version = 'data/synthetic_data.csv'
     logging.info('Data Version - {}'.format(data_version))
     df = pd.read_csv(PATH + data_version).set_index('user_id')
 
@@ -30,15 +30,15 @@ if __name__ == '__main__':
     all_ns = [round(i*0.8) for i in all_ns]
 
     # Step 5: Define number of repetitions for small data and where to start the training data seed
-    reps_small = 10
-    reps_medium = 5
-    reps_large = 3
+    reps_small = 1
+    reps_medium = 1
+    reps_large = 1
 
     # Step 6: Define scoring to optimize models on
     scoring = 'roc_auc'
 
     # Step 7: Choose model types and pull hyperparamaters for it
-    model_considered = ['lr', 'svm', 'nb', 'rf', 'adaboost', 'nn']
+    model_considered = ['lr'] #, 'svm', 'nb', 'rf', 'adaboost', 'nn'
 
     try:
         # pulled from model settings
