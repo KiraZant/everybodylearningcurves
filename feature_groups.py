@@ -5,25 +5,17 @@ basic_info = ['start_year', 'Weeks', 'AN', 'Fit', 'Plus', 'basic', 'original']
 wcs_scores = ['screening_wcs', 'wcs_total']
 
 # Additional Extended questionnaire
-intr_set = ['Group chat', 'Feedback', 'Diary',
+ext_quest = ['Group chat', 'Feedback', 'Diary',
        'Promote eating & exercise', 'Establish eating & exercise',
        'Body image', 'Self-esteem', 'Occ. binge/ purge', 'Dieatry restrain',
-       'Weight regulation']
-
-socio_dem = ['age', 'soc_occupational_status_5', 'soc_occupational_status_1',
+       'Weight regulation', 'age', 'soc_occupational_status_5', 'soc_occupational_status_1',
        'soc_occupational_status_4', 'soc_occupational_status_3',
        'soc_occupational_status_6', 'soc_occupational_status_7',
-       'soc_occupational_status_2','soc_education', 'soc_single', 'soc_residency']
-
-psych_history = ['any_lifetime_disorder_yes_no', 'any_prior_psychotherapy_yes_no',
-                 'weightloss_duration', 'weightloss_past_year']
-
-personality = ['nan_personality', 'bfi_extro', 'bfi_agree', 'bfi_conc', 'bfi_neuro', 'bfi_open']
-
-other_psyc = ['screening_bmi', 'gad7_sum', 'phq9_sum', 'nan_ssrq', 'screening_csed_3m_loss_freq', 'auditc_total_score',
-              'bmi','edeq_total_score', 'ies_mean', 'rse_total', 'ssrq_total', 'fruit_veg_portion']
-
-expectation = ['ceq_q1', 'ceq_q2', 'ceq_q3', 'ceq_q4', 'ceq_q5', 'ceq_q6']
+       'soc_occupational_status_2','soc_education', 'soc_single', 'soc_residency','any_lifetime_disorder_yes_no',
+       'any_prior_psychotherapy_yes_no','weightloss_duration', 'weightloss_past_year','nan_personality',
+       'bfi_extro', 'bfi_agree', 'bfi_conc', 'bfi_neuro', 'bfi_open','screening_bmi', 'gad7_sum', 'phq9_sum', 'nan_ssrq', 'screening_csed_3m_loss_freq', 'auditc_total_score',
+       'bmi','edeq_total_score', 'ies_mean', 'rse_total', 'ssrq_total', 'fruit_veg_portion',
+       'ceq_q1', 'ceq_q2', 'ceq_q3', 'ceq_q4', 'ceq_q5', 'ceq_q6']
 
 # Simple behavior
 behavior_simple = ['login_day_0', 'login_day_1', 'login_day_2', 'login_day_3', 'login_day_4', 'login_day_5', 'login_day_6']

@@ -3,7 +3,7 @@ from sas7bdat import SAS7BDAT
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import ExtraTreesRegressor
 from sklearn.impute import IterativeImputer
-from feature_groups import *
+#from feature_groups import basic_info, behavior_simple, wcs_scores, ext_quest, behavior, behavior_all
 
 def split(df, Xs, ys='dropout_mod3', sampling_N=False, state_sample=1, test_state=40, save=False):
     '''

@@ -126,8 +126,7 @@ models_behavioral = {
 }
 
 # Define models and parameter grid per run based on investigating training results
-hyper_dict = {'trial': models_simple,
-              'wcs_only': models_simple,
+hyper_dict = {'wcs_only': models_simple,
               'baseline_extended': models_general,
               'behavior_simple': models_simple,
               'behavior_extended': models_behavioral,

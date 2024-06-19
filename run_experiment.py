@@ -3,7 +3,8 @@ from sklearn.metrics import RocCurveDisplay, ConfusionMatrixDisplay
 from sklearn.metrics import f1_score, accuracy_score, roc_curve, auc, recall_score, precision_score,balanced_accuracy_score
 from sklearn.preprocessing import StandardScaler
 from model_class import Model
-from model_settings import *
+#from model_settings import models_simple, models_behavioral, models_general
+
 
 def run_experiment_combined(x_train, y_train,  x_test, y_test, name, models, scoring, scaler_object=StandardScaler(), path='', save=True):
     # Get hyperparameter space

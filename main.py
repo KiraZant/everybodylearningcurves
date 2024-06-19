@@ -1,7 +1,7 @@
 from utils import *
 from data_prep import split
-from feature_groups import *
-from model_settings import *
+from feature_groups import basic_info, behavior_simple, wcs_scores, ext_quest, behavior, behavior_all
+from model_settings import hyper_dict
 from logger_code import initiate_log
 from save_and_pull import generate_path
 from run_experiment import run_experiment_combined
@@ -11,19 +11,17 @@ if __name__ == '__main__':
     PATH = './'
     logger = initiate_log(PATH)
 
-    # Step 1: Check Data Version
+    # Step 1: Check Data Version - Data cannot be publicly shared
     data_version = ''
     logging.info('Data Version - {}'.format(data_version))
     df = pd.read_csv(PATH + data_version).set_index('user_id')
 
     # Step 2: Define what variables to use (keep order)
-    Xs = wcs_scores + intr_set + socio_dem + psych_history + personality + expectation + other_psyc
-    # #behavior_simple + wcs_scores + intr_set + socio_dem + psych_history + personality + expectation + other_psyc + behavior + behavior_all
-
+    Xs = behavior_simple # out of: behavior_simple, wcs_scores, ext_quest, behavior, behavior_all
     Xs = Xs+basic_info
 
     # Step 3: Give this run a name
-    run = 'baseline_extended'
+    run = 'behavior_simple'
 
     # Step 4: Decide for which Ns the run is completing
     all_ns = [100, 200, 300, 400, 500, 750, 1000, 1500, 2000, 2500, 3000, 3651]#[100, 200, 300, 400, 500, 750, 1000, 1500, 2000, 2500, 3000, 3651]
@@ -60,7 +58,7 @@ if __name__ == '__main__':
         else:
             reps = reps_medium
 
-        while reps > 0:
+        for _ in range(reps):
             if os.path.exists(path+'allresults.csv'):
                 result_curves = pd.read_csv(path+'allresults.csv')
                 j = result_curves.index.max()+1
@@ -74,7 +72,7 @@ if __name__ == '__main__':
             logging.info('Start with'+str(i)+' with'+str(reps)+' runs to go')
             x_train, x_test, y_train, y_test = split(df, Xs, sampling_N=i, state_sample=42+reps)
 
-            name = 'Run_' + str(j) + '_' + str(i)
+            name = f"Run{j}_{i}"
 
             generate_path(path+name)
             logging.info('Features included {}'.format(str(x_train.columns)))
@@ -99,6 +97,5 @@ if __name__ == '__main__':
 
                 j += 1
             result_curves.to_csv(path+'/allresults.csv', index=None)
-            reps = reps-1
 
     logging.info('Finished')
