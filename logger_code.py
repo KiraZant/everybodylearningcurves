@@ -1,4 +1,5 @@
 from utils import *
+# used to track results
 def initiate_log(PATH):
     logging.basicConfig(filename=PATH + "20240529_finalrun.log",
                         format='%(asctime)s %(message)s',

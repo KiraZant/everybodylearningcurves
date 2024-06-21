@@ -6,7 +6,7 @@ from sklearn.neural_network import MLPClassifier
 from sklearn.naive_bayes import GaussianNB
 from sklearn.svm import SVC
 
-
+# Hyperparamaters used for final results
 models_simple = {
     'lr': {
         'model': LogisticRegression(class_weight='balanced'),

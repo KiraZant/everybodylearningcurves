@@ -11,34 +11,34 @@ if __name__ == '__main__':
     PATH = './'
     logger = initiate_log(PATH)
 
-    # Step 1: Data cannot be publicly shared, therefore, this is synthetic data with no predictive power
+    # Step 1: Data cannot be publicly shared, therefore, this is synthetic data with no relation to actual results
     data_version = 'data/synthetic_data.csv'
     logging.info('Data Version - {}'.format(data_version))
     df = pd.read_csv(PATH + data_version).set_index('user_id')
 
-    # Step 2: Define what variables to use (keep order)
-    Xs = behavior_simple # out of: behavior_simple, wcs_scores, ext_quest, behavior, behavior_all
+    # Step 2: Define what variables to use out of behavior_simple, wcs_scores, ext_quest, behavior, behavior_all
+    Xs = behavior_simple
     Xs = Xs+basic_info
 
     # Step 3: Give this run a name
     run = 'behavior_simple'
 
     # Step 4: Decide for which Ns the run is completing
-    all_ns = [100, 200, 300, 400, 500, 750, 1000, 1500, 2000, 2500, 3000, 3651]#[100, 200, 300, 400, 500, 750, 1000, 1500, 2000, 2500, 3000, 3651]
+    all_ns = [100, 200, 300, 400, 500, 750, 1000, 1500, 2000, 2500, 3000, 3651]
 
     # Take away the simulated 20% test set
     all_ns = [round(i*0.8) for i in all_ns]
 
     # Step 5: Define number of repetitions for small data and where to start the training data seed
-    reps_small = 1
-    reps_medium = 1
-    reps_large = 1
+    reps_small = 3
+    reps_medium = 5
+    reps_large = 10
 
     # Step 6: Define scoring to optimize models on
     scoring = 'roc_auc'
 
     # Step 7: Choose model types and pull hyperparamaters for it
-    model_considered = ['lr'] #, 'svm', 'nb', 'rf', 'adaboost', 'nn'
+    model_considered = ['lr', 'svm', 'nb', 'rf', 'adaboost', 'nn']
 
     try:
         # pulled from model settings

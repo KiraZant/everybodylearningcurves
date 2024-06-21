@@ -1,7 +1,6 @@
 from sklearn.model_selection import GridSearchCV
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
-import numpy as np
 from sklearn.exceptions import ConvergenceWarning
 import warnings
 class Model:

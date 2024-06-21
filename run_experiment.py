@@ -3,8 +3,6 @@ from sklearn.metrics import RocCurveDisplay, ConfusionMatrixDisplay
 from sklearn.metrics import f1_score, accuracy_score, roc_curve, auc, recall_score, precision_score,balanced_accuracy_score
 from sklearn.preprocessing import StandardScaler
 from model_class import Model
-#from model_settings import models_simple, models_behavioral, models_general
-
 
 def run_experiment_combined(x_train, y_train,  x_test, y_test, name, models, scoring, scaler_object=StandardScaler(), path='', save=True):
     # Get hyperparameter space
@@ -43,7 +41,6 @@ def run_experiment_combined(x_train, y_train,  x_test, y_test, name, models, sco
                    recall=recall_score(y_test, y_pred),
                    precision=precision_score(y_test, y_pred),
                    test_auc=roc_auc_score(y_test, predict_probs[:, 1]),
-                   #test_auc=auc(fpr, tpr),
                    test_bacc=balanced_accuracy_score(y_test, y_pred),
                    fpr=fpr,
                    tpr=tpr,
@@ -63,36 +60,4 @@ def run_experiment_combined(x_train, y_train,  x_test, y_test, name, models, sco
     with open(file, 'wb') as file:
         pickle.dump(mod.grid_search.best_estimator_, file)
 
-    # # TEST Plot and save confusion matrix and ROC
-    # fig = plt.figure()
-    # ax = fig.add_subplot(111)
-    # labels = ['completed', 'dropped out']
-    #
-    # ConfusionMatrixDisplay.from_estimator(mod.grid_search, x_test, y_test,
-    #                                       display_labels=labels,
-    #                                       cmap=plt.cm.Blues, ax=ax)
-    # plt.title('Confusion matrix, ' + 'Finaltest_' + '_' + name)
-    # plt.xlabel('Predicted')
-    # plt.ylabel('True')
-    #
-    # # save Confusion Matrix as png
-    # fig.savefig(path + '/graphs/' + 'Finaltest_' + '_' + name + '_confusion-matrix_' + '.png')
-    # plt.close()
-    # del fig
-    # # plot ROC curves and save figure
-    # fig = plt.figure()
-    # lw = 2
-    # plt.plot(results['fpr'], results['tpr'], color='darkorange',
-    #          lw=lw, label='ROC curve (area = %0.2f)' % results['test_auc'])
-    # plt.plot([0, 1], [0, 1], color='navy', lw=lw, linestyle='--')
-    # plt.xlim([0.0, 1.0])
-    # plt.ylim([0.0, 1.05])
-    # plt.xlabel('False Positive Rate')
-    # plt.ylabel('True Positive Rate')
-    # plt.title('Finaltest_ROC ' + name)
-    # plt.legend(loc="lower right")
-    # fig.savefig(path + '/graphs/' + 'Finaltest_' + name + '_auroc' + '.png', dpi=fig.dpi)
-    # # plt.show()
-    # plt.close()
-    # del fig
     return results

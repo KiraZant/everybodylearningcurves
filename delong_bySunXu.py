@@ -1,7 +1,5 @@
-import pandas as pd
 import numpy as np
 import scipy.stats
-from scipy import stats
 
 # Copied and slightly adapted from https://github.com/jiesihu/AUC_Delongtest__python/blob/main/README.md
 

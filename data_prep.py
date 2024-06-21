@@ -46,36 +46,6 @@ def split(df, Xs, ys='dropout_mod3', sampling_N=False, state_sample=1, test_stat
 
     return x_train, x_test, y_train, y_test
 
-def read_sas_own(file):
-    with SAS7BDAT(file) as reader:
-        df = reader.to_data_frame()
-    return df
-
-def get_idmap(df1):
-    return dict(zip(df1['client_database_id'].unique(), range(1, len(df1['client_database_id'].unique())+1)))
-
-def user_id(df1, id_map, drop=True):
-    df1.insert(0, "user_id", df1['client_database_id'].map(id_map))
-    df1['user_id'] = df1['user_id'].astype('int')
-    if drop:
-        df1 = df1.drop(columns=['client_database_id'])
-    return df1
-
-def regex_to_colnames(df, yeses, nos=[], univ=[], printing=False):
-    ''' Input: dataframe and two lists of character n-grams
-        Returns list of all column names in df including n-grams from list1 and excluding n-grams from list2
-    '''
-    names = []
-    for yes in yeses:
-        names += [x for x in df.columns if re.search(yes,x)]
-    for no in nos:
-        names = [x for x in names if not re.search(no,x)]
-    for un in univ:
-        names = [x for x in names if re.search(un,x)]
-    if printing:
-        print('Total of', len(names), 'columns')
-    return names
-
 def cut_predtime(df_1, pred_cut, date_ditct, date_df_1):
     df_1['start_date'] = df_1['client_database_id'].map(date_ditct)
     df_1.start_date = pd.to_datetime(df_1.start_date)
