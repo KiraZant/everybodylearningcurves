@@ -1,4 +1,3 @@
-from utils import *
 from sklearn.ensemble import AdaBoostClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
@@ -6,7 +5,8 @@ from sklearn.neural_network import MLPClassifier
 from sklearn.naive_bayes import GaussianNB
 from sklearn.svm import SVC
 
-# Hyperparamaters used for final results
+# Hyperparameter spaces used for final results, last dictionary defines which is used where
+
 models_simple = {
     'lr': {
         'model': LogisticRegression(class_weight='balanced'),

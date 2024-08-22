@@ -1,4 +1,4 @@
-# Added to all feature groups
+# Basic info is added to all feature groups
 basic_info = ['start_year', 'Weeks', 'AN', 'Fit', 'Plus', 'basic', 'original']
 
 # Simple questionnaire

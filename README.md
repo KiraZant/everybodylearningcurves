@@ -2,6 +2,40 @@
 
 Code used to train the ML models for the paper "Predictive Power, Variance and Generalizability – A Machine Learning Case Study on Minimal Necessary Data Sets Sizes in Mental Health Intervention Predictions".
 
+## File overview
+
+### 🗀 Models
+#### 🗎 [model_class.py](./model_class.py)
+Utility class for non-sequential scikit-learn models.
+
+#### 🗎 [model_settings.py](./model_settings.py)
+Contains all hyperparameters and model settings.
+
+### 🗀 Experiments
+#### 🗎 [run_experiment.py](./run_experiment.py)
+Calculation of learning curves across data set sizes for one feature group at a time
+
+#### 🗎 [delong_bySunXu.py](./delong_bySunXu.py)
+Implementation of deLong test to determine if differences in AUC values are statistically significant
+
+
+### 🗀 Utils
+#### 🗎 [data_prep.py](utils/data_prep.py)
+Functions to go from raw data to prepped train-test
+
+#### 🗎 [feature_groups.py](utils/feature_groups.py)
+Lists for feature names for the six groups used in the paper
+
+#### 🗎 [logger_code.py](utils/logger_code.py)
+Initiates logger to keep track of all characteristics and results
+
+#### 🗎 [make_directory.py](utils/make_directory.py)
+Generates result directory for new runs
+
+#### 🗎 [imports.py](utils/imports.py)
+Most used packages for easy import
+
+Run by:
 
 	python3 -m venv .venv
 	source .venv/bin/activate

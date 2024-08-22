@@ -1,9 +1,9 @@
-from utils import *
-from data_prep import split
-from feature_groups import basic_info, behavior_simple, wcs_scores, ext_quest, behavior, behavior_all
+from utils.data_prep import split
+from utils.feature_groups import basic_info, behavior_simple
+from utils.imports import *
 from model_settings import hyper_dict
-from logger_code import initiate_log
-from save_and_pull import generate_path
+from utils.logger_code import initiate_log
+from utils.make_directory import generate_path
 from run_experiment import run_experiment_combined
 from sklearn.preprocessing import StandardScaler
 
