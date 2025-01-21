@@ -1,6 +1,6 @@
 # everybodylearningcurves
 
-Code used to train the ML models for the paper "Predictive Power, Variance and Generalizability – A Machine Learning Case Study on Minimal Necessary Data Sets Sizes in Mental Health Intervention Predictions".
+Code used to train the ML models for the paper Zantvoort, K., Nacke, B., Görlich, D., Hornstein, S., Jacobi, C., & Funk, B. (2024). Es-timation of minimal data sets sizes for machine learning predictions in digital mental health interventions. Npj Digital Medicine, 7(1), 1–10. https://doi.org/10.1038/s41746-024-01360-w
 
 ## File overview
 
